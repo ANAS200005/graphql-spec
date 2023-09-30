@@ -1,0 +1,14 @@
+import random
+
+def generera_nytt_nummer(föregående_nummer):
+    nytt_nummer = random.randint(1, 36)  # Generera ett slumptal mellan 1 och 36
+    while nytt_nummer == föregående_nummer:  # Se till att det nya numret inte är samma som det föregående
+        nytt_nummer = random.randint(1, 36)
+    return nytt_nummer
+
+föregående_nummer = None  # Börja med ett tomt föregående nummer
+while True:
+    input("Tryck på Enter för att generera nästa nummer...")
+    nytt_nummer = generera_nytt_nummer(föregående_nummer)
+    print(f"Nytt nummer: {nytt_nummer}")
+    föregående_nummer = nytt_nummer
